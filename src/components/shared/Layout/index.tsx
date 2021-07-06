@@ -35,11 +35,11 @@ export function Layout(props: LayoutProps) {
 
 
   const menuItems = [
-    { icon: `😀`, text: "Item 1" },
-    { icon: `😉`, text: "Item 2" },
-    { icon: `😎`, text: "Item 3" },
-    { icon: `🤔`, text: "Item 4" },
-    { icon: `😛`, text: "Item 5" }
+    { icon: `😀`, text: "Tienda" },
+    { icon: `😉`, text: "Pedidos" },
+    { icon: `😎`, text: "Carrito" },
+    { icon: `🤔`, text: "Chat" },
+    { icon: `😛`, text: "Perfil" }
   ];
 
   const sidebarCollapsed = state.windowWidth < 1100;
@@ -56,8 +56,8 @@ export function Layout(props: LayoutProps) {
   };
 
   if (styles.showSidebar) { // adds the header options to the sidebar
-    menuItems.push({ icon: `😺️`, text: "Profile" });
-    menuItems.push({ icon: `⚙`, text: "Settings" });
+    menuItems.push({ icon: `😺️`, text: "Favoritos" });
+    menuItems.push({ icon: `⚙`, text: "Ajustes" });
   }
 
   return (
