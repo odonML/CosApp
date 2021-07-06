@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 interface UseLayoutResizingState {
   windowWidth: number;
   windowHeight: number;
-  windowSize: "SMALL" | "MEDIUM" | "LARGE";
+  windowSize: "EXTRA_SMALL" | "SMALL" | "MEDIUM" | "LARGE";
 }
 
 export function useLayoutResizing() {
@@ -31,12 +31,14 @@ export function useLayoutResizing() {
   }
 
   function getWindowSize(windowWidth: number) {
-    if (windowWidth > 500)
-      return "MEDIUM"
-    if (windowWidth > 768)
-      return "LARGE"
-    else
+    if (windowWidth <= 500)
+      return "EXTRA_SMALL"
+    if (windowWidth <= 768)
       return "SMALL"
+    if (windowWidth <= 1100)
+      return "MEDIUM"
+    else
+      return "LARGE"
   }
 
   const sidebarCollapsed = state.windowWidth < 1100;

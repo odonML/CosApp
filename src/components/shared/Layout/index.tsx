@@ -16,7 +16,8 @@ interface LayoutProps {
 export function Layout(props: LayoutProps) {
   const {
     sidebarCollapsed,
-    windowWidth
+    windowWidth,
+    windowSize
   } = useLayoutResizing()
 
   const menuItems = [
@@ -52,14 +53,14 @@ export function Layout(props: LayoutProps) {
         position: "relative"
       }}>
       {
-        styles.showSidebar ?
+        ["MEDIUM", "LARGE"].includes(windowSize) ?
         <Sidebar menuItems={menuItems} styles={styles} />
         : <TopBar leftComponent={`😺️`} rightComponent={`⚙`} title="COSAPP" />
       }
       <ContentContainer styles={styles}>
         {props.children}
       </ContentContainer>
-      {!styles.showSidebar && <ClientBottomBar />}
+      {["EXTRA_SMALL", "SMALL"].includes(windowSize) && <ClientBottomBar />}
     </div>
   )
 }

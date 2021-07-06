@@ -6,7 +6,7 @@ import { useLayoutResizing } from '../../hooks'
 export function ClientBottomBar() {
   const { windowSize } = useLayoutResizing()
 
-  const showLabel = ["MEDIUM"].includes(windowSize)
+  const showLabel = ["SMALL"].includes(windowSize)
 
   return (
     <BottomBar>
