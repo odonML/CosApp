@@ -18,6 +18,7 @@ export function Layout(props: LayoutProps) {
   })
 
   useEffect(() => {
+    updateDimensions()
     window.addEventListener("resize", updateDimensions)
     return () => window.removeEventListener("resize", updateDimensions)
   }, [])
