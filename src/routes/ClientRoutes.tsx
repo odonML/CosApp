@@ -1,22 +1,25 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import { Layout } from "../components/layout/Layout";
+import { Layout } from "../components/shared/";
+import { ClientNavbar } from '../components/client'
 
 export const ClientRoutes = () => {
+
   return (
-    <Layout>
+    <Layout
+      navbar={<ClientNavbar />}>
       <Switch>
-        <Route path="/home" >
-          <h1>hola1</h1>
+        <Route path="/client" exact>
+          <h1>Home</h1>
         </Route>
-        <Route path="/store">
-          <h1>hola2</h1>
+        <Route path="/client/store">
+          <h1>Store</h1>
         </Route>
-        <Route path="/profiel">
-          <h1>hola3</h1>
+        <Route path="/client/profile">
+          <h1>Profile</h1>
         </Route>
-        <Route path="/checkout">
-          <h1>hola4</h1>
+        <Route path="/client/checkout">
+          <h1>Checkout</h1>
         </Route>
       </Switch>
     </Layout>
