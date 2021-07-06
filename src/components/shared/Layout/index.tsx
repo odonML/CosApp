@@ -4,6 +4,8 @@ import { BottomBar } from "../BottomBar"
 import { ContentContainer } from '../ContentContainer'
 import "./Layout.styles.css"
 import { Sidebar } from '../Sidebar'
+import { ClientBottomBar } from '../../client/ClientBottomBar'
+import { useLayoutResizing } from '../../../hooks'
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -12,28 +14,10 @@ interface LayoutProps {
 }
 
 export function Layout(props: LayoutProps) {
-  const [state, setState] = useState<any>({
-    windowWidth: 0,
-    windowHeight: 0
-  })
-
-  useEffect(() => {
-    updateDimensions()
-    window.addEventListener("resize", updateDimensions)
-    return () => window.removeEventListener("resize", updateDimensions)
-  }, [])
-
-  function updateDimensions() {
-    const windowWidth = typeof window !== "undefined" ? window.innerWidth : 0
-    const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0
-
-    setState({
-      windowHeight,
-      windowWidth
-    })
-  }
-
-
+  const {
+    sidebarCollapsed,
+    windowWidth
+  } = useLayoutResizing()
 
   const menuItems = [
     { icon: `😀`, text: "Tienda" },
@@ -43,15 +27,14 @@ export function Layout(props: LayoutProps) {
     { icon: `😛`, text: "Perfil" }
   ];
 
-  const sidebarCollapsed = state.windowWidth < 1100;
 
   const styles = {
     white: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     black: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
     topBarHeight: 40,
     footerMenuHeight: 50,
-    showFooterMenuText: state.windowWidth > 500,
-    showSidebar: state.windowWidth > 768,
+    showFooterMenuText: windowWidth > 500,
+    showSidebar: windowWidth > 768,
     sidebarCollapsed,
     sidebarWidth: sidebarCollapsed ? 50 : 150
   };
@@ -71,12 +54,12 @@ export function Layout(props: LayoutProps) {
       {
         styles.showSidebar ?
         <Sidebar menuItems={menuItems} styles={styles} />
-        : <TopBar styles={styles} />
+        : <TopBar leftComponent={`😺️`} rightComponent={`⚙`} title="COSAPP" />
       }
       <ContentContainer styles={styles}>
         {props.children}
       </ContentContainer>
-      {!styles.showSidebar && <BottomBar menuItems={menuItems} styles={styles} />}
+      {!styles.showSidebar && <ClientBottomBar />}
     </div>
   )
 }

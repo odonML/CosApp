@@ -1,20 +1,23 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import { Layout } from "../components/shared";
-import { ClientNavbar } from '../components/client'
-import { ClientStore } from "../pages/client"
 import { Story } from "../pages/client";
 import { ProducerPage } from "../pages/client/ProducerPage/ProducerPage";
 import { PaymentOptions } from "../pages/client/PaymentOptionsPage/index";
+import { ClientTopBar } from '../components/client'
+import { ClientStore } from "../pages/client"
 
 export const ClientRoutes = () => {
 
   return (
     <Layout
-      navbar={<ClientNavbar />}>
+      navbar={<ClientTopBar />}>
       <Switch>
         <Route path="/client" exact>
           <ClientStore/>
+        </Route>
+        <Route path="/client/store">
+          <h1>Store</h1>
         </Route>
         <Route path="/client/profile">
           <h1>Profile</h1>
