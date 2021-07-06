@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import { Layout } from "../components/shared/";
+import { Layout } from "../components/shared";
 import { ClientNavbar } from '../components/client'
 
 export const ClientRoutes = () => {
