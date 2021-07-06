@@ -1,5 +1,5 @@
 
-let Button =(props:any) => {
+export const Button =(props:any) => {
 
     let clickButton=()=>{
         props.click();
@@ -9,4 +9,3 @@ let Button =(props:any) => {
         <button onClick={clickButton}>{props.titulo}</button>
     );
 }
-export default Button;
