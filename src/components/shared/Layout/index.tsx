@@ -3,6 +3,7 @@ import { TopBar } from '../TopBar'
 import { BottomBar } from "../BottomBar"
 import { ContentContainer } from '../ContentContainer'
 import "./Layout.styles.css"
+import { Sidebar } from '../Sidebar'
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -41,13 +42,23 @@ export function Layout(props: LayoutProps) {
     { icon: `😛`, text: "Item 5" }
   ];
 
+  const sidebarCollapsed = state.windowWidth < 1100;
+
   const styles = {
     white: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     black: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
     topBarHeight: 40,
     footerMenuHeight: 50,
-    showFooterMenuText: state.windowWidth > 500
+    showFooterMenuText: state.windowWidth > 500,
+    showSidebar: state.windowWidth > 768,
+    sidebarCollapsed,
+    sidebarWidth: sidebarCollapsed ? 50 : 150
   };
+
+  if (styles.showSidebar) { // adds the header options to the sidebar
+    menuItems.push({ icon: `😺️`, text: "Profile" });
+    menuItems.push({ icon: `⚙`, text: "Settings" });
+  }
 
   return (
     <div
@@ -56,11 +67,15 @@ export function Layout(props: LayoutProps) {
         minHeight: "100vh",
         position: "relative"
       }}>
-      <TopBar styles={styles} />
+      {
+        styles.showSidebar ?
+        <Sidebar menuItems={menuItems} styles={styles} />
+        : <TopBar styles={styles} />
+      }
       <ContentContainer styles={styles}>
         {props.children}
       </ContentContainer>
-      <BottomBar menuItems={menuItems} styles={styles} />
+      {!styles.showSidebar && <BottomBar menuItems={menuItems} styles={styles} />}
     </div>
   )
 }
