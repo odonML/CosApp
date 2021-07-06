@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router";
 import { Layout } from "../components/shared";
 import { ClientNavbar } from '../components/client'
 import { ProducerPage } from "../pages/client";
+import { ClientStore } from "../pages/client"
 
 export const ClientRoutes = () => {
 
@@ -11,10 +12,7 @@ export const ClientRoutes = () => {
       navbar={<ClientNavbar />}>
       <Switch>
         <Route path="/client" exact>
-          <h1>Home</h1>
-        </Route>
-        <Route path="/client/store">
-          <h1>Store</h1>
+          <ClientStore/>
         </Route>
         <Route path="/client/profile">
           <h1>Profile</h1>
