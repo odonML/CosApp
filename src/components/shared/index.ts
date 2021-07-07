@@ -3,3 +3,4 @@ export * from "./Button";
 export * from "./Layout";
 export * from "./ListProduct/index";
 export * from "./CardProduct/index";
+export * from "./ListHistorias/index"

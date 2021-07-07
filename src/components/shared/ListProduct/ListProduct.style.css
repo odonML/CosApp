@@ -1,5 +1,9 @@
 .catalogoProduct{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     border: 1px solid red;
 }

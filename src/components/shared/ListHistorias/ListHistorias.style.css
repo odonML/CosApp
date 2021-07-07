@@ -1,0 +1,9 @@
+.listHistorias{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid red;
+}
