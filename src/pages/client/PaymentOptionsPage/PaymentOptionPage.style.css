@@ -1,0 +1,10 @@
+.PaymentMethod{
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+}
+
+.PaymentMethod img{
+    width: 80px;
+}

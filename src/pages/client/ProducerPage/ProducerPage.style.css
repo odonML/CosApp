@@ -1,0 +1,12 @@
+.ButtonGrid{
+    display: flex;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ProducerPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

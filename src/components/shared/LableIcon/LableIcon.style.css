@@ -1,0 +1,6 @@
+.LableIcon{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: #323E48;
+}
