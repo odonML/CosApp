@@ -6,6 +6,7 @@ import { ProducerPage } from "../pages/client/ProducerPage/ProducerPage";
 import { PaymentOptions } from "../pages/client/PaymentOptionsPage/index";
 import { ClientTopBar } from '../components/client'
 import { ClientStore } from "../pages/client"
+import { NotFound } from '../pages/others'
 
 export const ClientRoutes = () => {
 
@@ -33,6 +34,9 @@ export const ClientRoutes = () => {
         </Route>
         <Route path="/client/payment/Options">
           <PaymentOptions />
+        </Route>
+        <Route path="/client/not-available-yet">
+          <NotFound />
         </Route>
       </Switch>
     </Layout>

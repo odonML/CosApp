@@ -1,4 +1,5 @@
 import React from "react"
+import { useHistory } from "react-router"
 
 interface SidebarProps {
   menuItems: any;
@@ -7,6 +8,7 @@ interface SidebarProps {
 
 export function Sidebar(props: SidebarProps) {
   const { menuItems, styles } = props
+  const history = useHistory()
 
   const sidebarStyle = {
     height: "100vh",
@@ -37,6 +39,9 @@ export function Sidebar(props: SidebarProps) {
     fontWeight: "bold"
   };
 
+  const onClickOption = (url: string) => {
+    history.push(url)
+  }
 
   return (
     // @ts-ignore
@@ -44,7 +49,7 @@ export function Sidebar(props: SidebarProps) {
       {/* @ts-ignore */}
       <div style={logoStyle}>{styles.sidebarCollapsed ? "C" : "COSAPP"}</div>
       {menuItems.map((item: any, i: any) => (
-        <div key={i} style={menuItemStyle}>
+        <div key={i} style={menuItemStyle} onClick={() => onClickOption(item.url)} className="clickable">
           <span style={iconStyle}>{item.icon}</span>
           {!styles.sidebarCollapsed && item.text}
         </div>
