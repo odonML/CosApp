@@ -2,9 +2,10 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import { Layout } from "../components/shared";
 import { ClientNavbar } from '../components/client'
-import { ProducerPage } from "../pages/client";
 import { ClientStore } from "../pages/client"
 import { Story } from "../pages/client";
+import { ProducerPage } from "../pages/client/ProducerPage/ProducerPage";
+import { PaymentOptions } from "../pages/client/PaymentOptionsPage/index";
 
 export const ClientRoutes = () => {
 
@@ -26,6 +27,9 @@ export const ClientRoutes = () => {
         </Route>
         <Route path="/client/producer/stories/:id">
           <Story/>
+        </Route>
+        <Route path="/client/payment/Options">
+          <PaymentOptions />
         </Route>
       </Switch>
     </Layout>
