@@ -4,6 +4,7 @@ import { Layout } from "../components/shared";
 import { ClientNavbar } from '../components/client'
 import { ProducerPage } from "../pages/client";
 import { ClientStore } from "../pages/client"
+import { Story } from "../pages/client";
 
 export const ClientRoutes = () => {
 
@@ -22,6 +23,9 @@ export const ClientRoutes = () => {
         </Route>
         <Route path="/client/producer/profile">
           <ProducerPage />
+        </Route>
+        <Route path="/client/producer/stories/:id">
+          <Story/>
         </Route>
       </Switch>
     </Layout>
