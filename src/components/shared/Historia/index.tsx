@@ -9,7 +9,7 @@ export const Historia = ({id, img}:any) => {
     }
 
     return (
-        <div className="linkCircular" onClick={handelOnClick}>
+        <div className="linkCircular clickable" onClick={handelOnClick}>
             <img className="historia" src={img.default} alt="historia"/>
         </div>
     );

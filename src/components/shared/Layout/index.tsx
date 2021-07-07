@@ -21,11 +21,11 @@ export function Layout(props: LayoutProps) {
   } = useLayoutResizing()
 
   const menuItems = [
-    { icon: `😀`, text: "Tienda" },
-    { icon: `😉`, text: "Pedidos" },
-    { icon: `😎`, text: "Carrito" },
-    { icon: `🤔`, text: "Chat" },
-    { icon: `😛`, text: "Perfil" }
+    { icon: `🏠`, text: "Tienda", url: "/client" },
+    { icon: `📦`, text: "Pedidos", url: "/client/not-available-yet" },
+    { icon: `🛒`, text: "Carrito", url: "/client/not-available-yet" },
+    { icon: `💬`, text: "Chat", url: "/client/not-available-yet" },
+    { icon: `🙂`, text: "Perfil", url: "/client/producer/profile" }
   ];
 
 
@@ -41,8 +41,8 @@ export function Layout(props: LayoutProps) {
   };
 
   if (styles.showSidebar) { // adds the header options to the sidebar
-    menuItems.push({ icon: `😺️`, text: "Favoritos" });
-    menuItems.push({ icon: `⚙`, text: "Ajustes" });
+    menuItems.push({ icon: `🧡`, text: "Favoritos", url: "/client" });
+    menuItems.push({ icon: `⚙`, text: "Ajustes", url: "/client" });
   }
 
   return (
@@ -55,7 +55,7 @@ export function Layout(props: LayoutProps) {
       {
         ["MEDIUM", "LARGE"].includes(windowSize) ?
         <Sidebar menuItems={menuItems} styles={styles} />
-        : <TopBar leftComponent={`😺️`} rightComponent={`⚙`} title="COSAPP" />
+        : <TopBar leftComponent={`🧡`} rightComponent={`⚙`} title="COSAPP" />
       }
       <ContentContainer styles={styles}>
         {props.children}
