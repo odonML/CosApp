@@ -1,6 +1,8 @@
+import "./button.style.css"
+
 const ButtonProf = (props: any) => {
     return(
-        <a>{props.title}</a>
+        <a className={props.clase}>{props.title}</a>
     )
 }
 
