@@ -1,11 +1,12 @@
 import React from "react"
 
 interface TopBarProps {
-  styles: any
+  leftComponent: React.ReactNode;
+  rightComponent: React.ReactNode;
+  title: string;
 }
 
 export function TopBar(props: TopBarProps) {
-  const { styles } = props
 
   const topBarStyle = {
     position: "fixed",
@@ -14,10 +15,10 @@ export function TopBar(props: TopBarProps) {
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    height: styles.topBarHeight,
-    backgroundColor: styles.white(),
-    borderBottom: `1px solid ${styles.black(0.1)}`,
-    fontWeight: "bold",
+    height: 40,
+    backgroundColor: "#FFF",
+    borderBottom: `1px solid 0.1`,
+    fontWeight: 'bold',
     padding: "0px 20px",
     boxSizing: "border-box"
   };
@@ -25,9 +26,9 @@ export function TopBar(props: TopBarProps) {
   return (
     // @ts-ignore
     <div style={topBarStyle}>
-      <span>{`😺️`}</span>
-        CosApp
-      <span>{`⚙️`}</span>
+      <span>{props.leftComponent}</span>
+        {props.title}
+      <span>{props.rightComponent}</span>
     </div>
   )
 }

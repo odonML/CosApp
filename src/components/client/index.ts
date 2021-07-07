@@ -1,1 +1,1 @@
-export * from "./ClientNavbar";
+export * from "./ClientTopBar";

@@ -1,4 +1,5 @@
 import React from "react"
+import { useLayoutResizing } from '../../../hooks'
 
 interface ContentContainerProps {
   children?: React.ReactNode;
@@ -6,7 +7,15 @@ interface ContentContainerProps {
 }
 
 export function ContentContainer(props: ContentContainerProps) {
+  const {
+    sidebarCollapsed,
+    windowWidth,
+    windowSize
+  } = useLayoutResizing()
+
   const { styles } = props
+
+  const windowIsSmall = windowSize === "SMALL"
 
   const contentStyle = {
     paddingTop: styles.showSidebar ? 20 : styles.topBarHeight + 20,
