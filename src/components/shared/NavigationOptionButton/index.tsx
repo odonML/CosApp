@@ -1,16 +1,24 @@
 import React from 'react'
+import { useHistory } from 'react-router'
 
 interface NavigationOptionButtonProps {
   icon: any;
   label: string;
   showLabel?: boolean;
+  url?: string
 }
 
 export function NavigationOptionButton(props: NavigationOptionButtonProps) {
   const { icon, label, showLabel } = props;
 
+  const history = useHistory()
+
+  const onClickOption = (url: string = "") => {
+    history.push(url)
+  }
+
   return (
-    <div style={containerStyles}>
+    <div style={containerStyles} className="clickable" onClick={() => onClickOption(props.url)}>
       <span style={iconContainerStyle()}>
         {icon}
       </span>

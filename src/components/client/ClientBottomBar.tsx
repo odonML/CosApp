@@ -10,11 +10,11 @@ export function ClientBottomBar() {
 
   return (
     <BottomBar>
-      <NavigationOptionButton showLabel={showLabel} icon={"🍔"} label="Opción 1" />
-      <NavigationOptionButton showLabel={showLabel} icon={"🐻"} label="Opción 2" />
-      <NavigationOptionButton showLabel={showLabel} icon={"⚽"} label="Opción 3" />
-      <NavigationOptionButton showLabel={showLabel} icon={"❤️"} label="Opción 4" />
-      <NavigationOptionButton showLabel={showLabel} icon={"🔥"} label="Opción 5" />
+      <NavigationOptionButton showLabel={showLabel} icon={"🏠"} label="Tienda" url="/client" />
+      <NavigationOptionButton showLabel={showLabel} icon={"📦"} label="Pedidos" url="/client/not-available-yet" />
+      <NavigationOptionButton showLabel={showLabel} icon={"🛒"} label="Carrito" url="/client/not-available-yet" />
+      <NavigationOptionButton showLabel={showLabel} icon={"💬️"} label="Chat" url="/client/not-available-yet"  />
+      <NavigationOptionButton showLabel={showLabel} icon={"🙂"} label="Perfil" url="/client/producer/profile" />
     </BottomBar>
   )
 }
