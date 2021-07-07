@@ -1,6 +1,6 @@
-# Hey hola
+# CosApp
 
-🔥  Este es el avance de la aplicación de demostración para la fase 2 del Talent Hackathon.
+🔥  Hey hola! Este es el avance de la aplicación de demostración para la fase 2 del Talent Hackathon.
 
 💻  Puedes visitarla en el link de abajo. Es responsiva, así que puedes usar tu teléfono, tablet o laptop.
 
