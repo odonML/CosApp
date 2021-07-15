@@ -1,4 +1,15 @@
-.card{
+/* BORDES */
+.br{
+    border: solid 1px red;
+}
+.bb{
+    border: solid 1px blue;
+}
+.by{
+    border: solid 1px yellow;
+}
+
+.cardProduct{
     width: auto;
     max-width: 375px;
     height: 180px;
@@ -8,13 +19,17 @@
     justify-content: center;
     background-color: white;
     box-shadow: 0px 4px 10px -5px;
-    border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 10px 10px;
     border-top: none;
 }
-.imgProduct{
+.cardImg{
     max-width: 147px;
     height: 147px;
 }
-.nombreProduct{
-    font-size: 25px;
+.imgProduct{
+    width: 100% ;
 }
+.nombreProduct{
+    font-size: 24px;
+}
+
